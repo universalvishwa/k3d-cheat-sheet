@@ -100,6 +100,11 @@ After creating clusters, run the `kubectl cluster-info` and `kubectl get nodes` 
     $ k3d cluster list
     ```
 
+- List all nodes in clusters
+    ```bash
+    $ k3d node list
+    ```
+
 - Get k3d/k3s version
     ```bash
     $ k3d version
