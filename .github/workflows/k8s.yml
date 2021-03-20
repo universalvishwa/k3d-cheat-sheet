@@ -1,5 +1,5 @@
 ---
-name: k8s-testing
+name: Kubernetes CI testing
 
 on:
   push:
@@ -10,8 +10,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  k3d-tesing:
-    name: Kubernets CI testing
+  single-node:
+    name: Single node cluster
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -20,8 +20,38 @@ jobs:
         uses: nolar/setup-k3d-k3s@v1
         with:
           k3d-args: --agents 2 --wait
-      - name: Get Kubernets cluster details
+      - name: Get Kubernetes cluster details
         run: |
           kubectl version --short
           kubectl cluster-info
-          ubectl get nodes
+          kubectl get nodes
+  single-master:
+    name: Single master multiple workers
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      - name: Create k3d cluster
+        uses: nolar/setup-k3d-k3s@v1
+        with:
+          k3d-args: --agents 2 --wait
+      - name: Get Kubernetes cluster details
+        run: |
+          kubectl version --short
+          kubectl cluster-info
+          kubectl get nodes
+  multi-master:
+    name: Multi-master multiple workers
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      - name: Create k3d cluster
+        uses: nolar/setup-k3d-k3s@v1
+        with:
+          k3d-args: --servers 3 --agents 3 --wait
+      - name: Get Kubernetes cluster details
+        run: |
+          kubectl version --short
+          kubectl cluster-info
+          kubectl get nodes
