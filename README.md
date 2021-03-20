@@ -1,10 +1,15 @@
 # Lightweight Kubernetes (k3d/k3s) in Docker tutorial
 
+[![CI](https://github.com/universalvishwa/k3d-cheat-sheet/workflows/CI/badge.svg)](https://github.com/universalvishwa/k3d-cheat-sheet/actions)
+
 ## Notes
 - If a cluster name is not specified, k3d will automatically set the cluster name to `k3d-k3s-default`.
 - Run the `get_latest_release.sh` shell script to determine the latest k3s/k3d version and set the image parameter to the latest image version.
 - Pre-requisites:
     - Docker
+
+## Github Actions
+
 
 ### Install and Configure environment
 - Install latest k3d utility
@@ -128,3 +133,4 @@ After creating clusters, run the `kubectl cluster-info` and `kubectl get nodes` 
 - [rancher/k3d](https://github.com/rancher/k3d)
 - [Set up K3s in High Availability using k3d](https://rancher.com/blog/2020/set-up-k3s-high-availability-using-k3d)
 - [[ Kube 80.5 ] Getting started with Rancher K3D v3.0.0](https://youtu.be/Hk9ehDjBZn4)
+- [Super-Linter](https://github.com/marketplace/actions/super-linter)
