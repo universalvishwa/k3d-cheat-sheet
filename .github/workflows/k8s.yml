@@ -26,7 +26,9 @@ jobs:
           kubectl cluster-info
           kubectl get nodes
       - name: Deploy to k8s cluster
-        run: kubectl create deployment webapp --image=nginx --port=80 expose
+        run: |
+          kubectl create deployment webapp --image=nginx --port=80
+          kubectl expose deployment webapp --name=webapp-service --type=ClusterIP --port=80
       - name: Run validation tests
         run: |
           kubectl get deployments
