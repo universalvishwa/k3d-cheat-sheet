@@ -60,7 +60,7 @@ jobs:
           kubectl describe deployment webapp
           kubectl get svc,deployments,pod
           kubectl run test-app --image=busybox --rm -it --command -- wget webapp-service
-          kubectl run test --image=busybox --command sleep 30
+          kubectl run test --image=busybox --wait --command sleep 30
           kubectl exec test -- wget webapp-service
   multi-master:
     name: Multi-master multiple workers
