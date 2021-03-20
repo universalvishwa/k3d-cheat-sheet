@@ -3,7 +3,10 @@
 [![CI](https://github.com/universalvishwa/k3d-cheat-sheet/workflows/CI/badge.svg)](https://github.com/universalvishwa/k3d-cheat-sheet/actions)
 [![Linter](https://github.com/universalvishwa/k3d-cheat-sheet/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
 
-[![Linter](https://github.com/universalvishwa/k3d-cheat-sheet/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/universalvishwa/k3d-cheat-sheet/workflows/linter.yml/badge.svg)
+[![Linter](https://github.com/universalvishwa/k3d-cheat-sheet/workflows/lint-code-base/badge.svg)](https://github.com/universalvishwa/k3d-cheat-sheet/actions/workflows/linter.yml)
+
+[![Linter](https://github.com/universalvishwa/k3d-cheat-sheet/actions/workflows/linter.yml/badge.svg)](https://github.com/universalvishwa/k3d-cheat-sheet/actions/workflows/linter.yml)
+
 
 
 ## Notes
