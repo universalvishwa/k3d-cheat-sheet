@@ -1,0 +1,25 @@
+---
+name: k8s-testing
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+  workflow_dispatch:
+
+jobs:
+  k3d-tesing:
+    name: Kubernets CI testing
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      - name: Create k3d cluster
+        uses: nolar/setup-k3d-k3s@v1
+        with:
+          k3d-args: --agents 2
+      - run: kubectl version
+      - run: kubectl cluster-info
+      - run: kubectl get nodes
