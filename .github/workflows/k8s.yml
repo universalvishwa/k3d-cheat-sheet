@@ -19,12 +19,19 @@ jobs:
       - name: Create k3d cluster
         uses: nolar/setup-k3d-k3s@v1
         with:
-          k3d-args: --agents 2 --wait
+          k3d-args: --wait
       - name: Get Kubernetes cluster details
         run: |
           kubectl version --short
           kubectl cluster-info
           kubectl get nodes
+      - name: Deploy to k8s cluster
+        run: kubectl create deployment webapp --image=nginx --port=80 expose
+      - name: Run validation tests
+        run: |
+          kubectl get deployments
+          kubectl describe deployment nginx
+          kubectl get svc,deployments,pod
   single-master:
     name: Single master multiple workers
     runs-on: ubuntu-latest
