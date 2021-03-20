@@ -7,9 +7,9 @@
 - If a cluster name is not specified, k3d will automatically set the cluster name to `k3d-k3s-default`.
 - Run the `get_latest_release.sh` shell script to determine the latest k3s/k3d version and set the image parameter to the latest image version.
 - Pre-requisites:
-  - Docker
+    - Docker
 - **_k3d_** is a great utility to do _**CI testing**_ for Kubernetes deployments.
-- Repository also contains few example Github actions workflows for Kubernetes CI testing. 
+- Repository also contains few example Github actions workflows for Kubernetes CI testing.
 
 ## Github Actions
 - Cluster specifications of sample workflows,
