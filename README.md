@@ -12,13 +12,13 @@
 - If a cluster name is not specified, k3d will automatically set the cluster name to `k3d-k3s-default`.
 - Run the `get_latest_release.sh` shell script to determine the latest k3s/k3d version and set the image parameter to the latest image version.
 - Pre-requisites:
-    - Docker
+  - Docker
 
 ## Github Actions
 - Cluster specifications of sample workflows,
-    - Single node
-    - Single master multiple workers
-    - Multi-master multiple workers
+  - Single node
+  - Single master multiple workers
+  - Multi-master multiple workers
 - The test case invloves _Deploying a simple nginx webapp exposed as a ClusterIP service and exectue some commands to validate the deployment._
 - The Github actions workflow definition is available in `.github/workflows/k8s.yml`  used for Kubernetes CI testing.
 
