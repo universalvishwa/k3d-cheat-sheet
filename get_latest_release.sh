@@ -14,8 +14,6 @@
 # -------------------------------------------------------------------------------------
 
 
-VERSION=1.0
-
 # Variables
 K3S_RELEASE_URL="https://github.com/k3s-io/k3s/releases"
 
@@ -27,20 +25,20 @@ NC='\033[0m'
 
 # Get latest k3 version
 get_latest_release() {
-  K3S_LATEST_VERSION=$(curl --silent "https://github.com/k3s-io/k3s/releases" | grep '+k3s1' | sed -E 's/.*"([^"]+)".*/\1/' | grep -E -m 1 '^v.+k3s1$')
+  K3S_LATEST_VERSION=$(curl --silent $K3S_RELEASE_URL | grep '+k3s1' | sed -E 's/.*"([^"]+)".*/\1/' | grep -E -m 1 '^v.+k3s1$')
   echo -e "Latest k3s version: ${BLUE}$K3S_LATEST_VERSION${NC}"
 }
 
 # Set k3d docker image name
 set_k3d_version() {
-  K3D_VERSION=`echo $1 | tr + -`
+  K3D_VERSION=$(echo $1 | tr + -)
   echo -e "Latest k3d version: ${GREEN}$K3D_VERSION${NC}"
 }
 
 # Main function
 main() {
     get_latest_release
-    set_k3d_version $K3S_LATEST_VERSION
+    set_k3d_version "$K3S_LATEST_VERSION"
 }
  
 main "$@"
