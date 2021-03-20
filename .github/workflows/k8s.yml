@@ -19,7 +19,9 @@ jobs:
       - name: Create k3d cluster
         uses: nolar/setup-k3d-k3s@v1
         with:
-          k3d-args: --agents 2
-      - run: kubectl version
-      - run: kubectl cluster-info
-      - run: kubectl get nodes
+          k3d-args: --agents 2 --wait
+      - name: Get Kubernets cluster details
+        run: |
+          kubectl version --short
+          kubectl cluster-info
+          ubectl get nodes

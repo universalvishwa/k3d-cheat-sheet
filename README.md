@@ -1,6 +1,9 @@
 # Lightweight Kubernetes (k3d/k3s) in Docker tutorial
 
-[![CI](https://github.com/universalvishwa/k3d-cheat-sheet/workflows/CI/badge.svg)](https://github.com/universalvishwa/k3d-cheat-sheet/actions)
+[![CI](https://github.com/universalvishwa/k3d-cheat-sheet/workflows/CI/badge.svg)](https://github.com/universalvishwa/k3d-cheat-sheet/actions) [![Kubernetes](https://img.shields.io/badge/Kubernetes-v1.20-326CE5?logo=kubernetes)](https://kubernetes.io/) [![Kubernetes](https://img.shields.io/badge/k3d-v4.0-4aceff?logo=kubernetes)](https://k3d.io/)
+
+
+
 
 ## Notes
 - If a cluster name is not specified, k3d will automatically set the cluster name to `k3d-k3s-default`.
