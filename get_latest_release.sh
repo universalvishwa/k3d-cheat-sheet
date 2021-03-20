@@ -31,7 +31,7 @@ get_latest_release() {
 
 # Set k3d docker image name
 set_k3d_version() {
-  K3D_VERSION=$(echo $1 | tr + -)
+  K3D_VERSION=$(echo "$1" | tr + -)
   echo -e "Latest k3d version: ${GREEN}$K3D_VERSION${NC}"
 }
 

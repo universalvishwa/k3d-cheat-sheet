@@ -21,7 +21,7 @@
 - Get command line options
     ```bash
     $ k3d --help
-    $ k3d [command] --help
+    $ k3d <command> --help
     ```
 
 ### Creating clusters
