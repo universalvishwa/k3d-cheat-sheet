@@ -1,15 +1,18 @@
 # Lightweight Kubernetes (k3d/k3s) in Docker tutorial with Github Actions
 
-[![CI](https://github.com/universalvishwa/k3d-cheat-sheet/workflows/CI/badge.svg)](https://github.com/universalvishwa/k3d-cheat-sheet/actions) [![Kubernetes](https://img.shields.io/badge/Kubernetes-v1.20-326CE5?logo=kubernetes)](https://kubernetes.io/) [![Kubernetes](https://img.shields.io/badge/k3d-v4.0-4aceff?logo=kubernetes)](https://k3d.io/)
+[![CI](https://github.com/universalvishwa/k3d-cheat-sheet/workflows/CI/badge.svg)](https://github.com/universalvishwa/k3d-cheat-sheet/actions) [![Kubernetes](https://img.shields.io/badge/Kubernetes-v1.20-326CE5?logo=kubernetes)](https://kubernetes.io/) [![Kubernetes](https://img.shields.io/badge/k3d-v4.3-4aceff?logo=kubernetes)](https://k3d.io/)
 
+## Overview
+- This repository contains a cheat sheet on how to get started with k3d (Lightweight Kubernetes in Docker) by Ranhcer.
+- **_k3d_** is a great utility to do _**CI testing**_ for Kubernetes deployments.
+- Repository also contains few example Github actions workflows for Kubernetes CI testing.
+- BONUS: Github actions workflow on Super Linter.
 
 ## Notes
 - If a cluster name is not specified, k3d will automatically set the cluster name to `k3d-k3s-default`.
 - Run the `get_latest_release.sh` shell script to determine the latest k3s/k3d version and set the image parameter to the latest image version.
 - Pre-requisites:
     - Docker
-- **_k3d_** is a great utility to do _**CI testing**_ for Kubernetes deployments.
-- Repository also contains few example Github actions workflows for Kubernetes CI testing.
 
 ## Github Actions
 - Cluster specifications of sample workflows,
