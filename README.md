@@ -128,7 +128,7 @@ After creating clusters, run the `kubectl cluster-info` and `kubectl get nodes` 
     $ k3d cluster start <cluster_name>
     ```
 
-# References
+## References
 - [k3d](https://k3d.io/)
 - [rancher/k3d](https://github.com/rancher/k3d)
 - [Set up K3s in High Availability using k3d](https://rancher.com/blog/2020/set-up-k3s-high-availability-using-k3d)
