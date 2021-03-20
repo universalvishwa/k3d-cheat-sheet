@@ -32,8 +32,9 @@ jobs:
       - name: Run validation tests
         run: |
           kubectl get deployments
-          kubectl describe deployment nginx
+          kubectl describe deployment webapp
           kubectl get svc,deployments,pod
+          kubectl run test-app --image=busybox --rm -it --command -- wget webapp-service
   single-master:
     name: Single master multiple workers
     runs-on: ubuntu-latest
@@ -49,6 +50,16 @@ jobs:
           kubectl version --short
           kubectl cluster-info
           kubectl get nodes
+      - name: Deploy to k8s cluster
+        run: |
+          kubectl create deployment webapp --image=nginx --port=80
+          kubectl expose deployment webapp --name=webapp-service --type=ClusterIP --port=80
+      - name: Run validation tests
+        run: |
+          kubectl get deployments
+          kubectl describe deployment webapp
+          kubectl get svc,deployments,pod
+          kubectl run test-app --image=busybox --rm -it --command -- wget webapp-service
   multi-master:
     name: Multi-master multiple workers
     runs-on: ubuntu-latest
@@ -64,3 +75,13 @@ jobs:
           kubectl version --short
           kubectl cluster-info
           kubectl get nodes
+      - name: Deploy to k8s cluster
+        run: |
+          kubectl create deployment webapp --image=nginx --port=80
+          kubectl expose deployment webapp --name=webapp-service --type=ClusterIP --port=80
+      - name: Run validation tests
+        run: |
+          kubectl get deployments
+          kubectl describe deployment webapp
+          kubectl get svc,deployments,pod
+          kubectl run test-app --image=busybox --rm -it --command -- wget webapp-service

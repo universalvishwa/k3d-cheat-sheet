@@ -1,5 +1,5 @@
 ---
-name: lint-code-base
+name: Lint code base
 
 on:
   push:

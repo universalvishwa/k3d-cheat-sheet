@@ -1,8 +1,6 @@
-# Lightweight Kubernetes (k3d/k3s) in Docker tutorial
+# Lightweight Kubernetes (k3d/k3s) in Docker tutorial with Github Actions
 
 [![CI](https://github.com/universalvishwa/k3d-cheat-sheet/workflows/CI/badge.svg)](https://github.com/universalvishwa/k3d-cheat-sheet/actions) [![Kubernetes](https://img.shields.io/badge/Kubernetes-v1.20-326CE5?logo=kubernetes)](https://kubernetes.io/) [![Kubernetes](https://img.shields.io/badge/k3d-v4.0-4aceff?logo=kubernetes)](https://k3d.io/)
-
-
 
 
 ## Notes
@@ -10,16 +8,23 @@
 - Run the `get_latest_release.sh` shell script to determine the latest k3s/k3d version and set the image parameter to the latest image version.
 - Pre-requisites:
   - Docker
+- **_k3d_** is a great utility to do _**CI testing**_ for Kubernetes deployments.
+- Repository also contains few example Github actions workflows for Kubernetes CI testing. 
 
 ## Github Actions
-
+- Cluster specifications of sample workflows,
+    - Single node
+    - Single master multiple workers
+    - Multi-master multiple workers
+- The test case invloves _Deploying a simple nginx webapp exposed as a ClusterIP service and exectue some commands to validate the deployment._
+- The Github actions workflow definition is available in `.github/workflows/k8s.yml`  used for Kubernetes CI testing.
 
 ### Install and Configure environment
 - Install latest k3d utility
     ```bash
     $ curl -s https://raw.githubusercontent.com/rancher/k3d/main/install.sh | bash
     OR
-    $ wget -q -O - https://raw.githubusercontent.com/rancher/k3d/main/install.sh | bash
+    $ wget -q -O- https://raw.githubusercontent.com/rancher/k3d/main/install.sh | bash
     ```
 - Get command line options
     ```bash
@@ -136,4 +141,6 @@ After creating clusters, run the `kubectl cluster-info` and `kubectl get nodes` 
 - [rancher/k3d](https://github.com/rancher/k3d)
 - [Set up K3s in High Availability using k3d](https://rancher.com/blog/2020/set-up-k3s-high-availability-using-k3d)
 - [[ Kube 80.5 ] Getting started with Rancher K3D v3.0.0](https://youtu.be/Hk9ehDjBZn4)
-- [Super-Linter](https://github.com/marketplace/actions/super-linter)
+- Github Actions:
+  - [Super-Linter](https://github.com/marketplace/actions/super-linter)
+  - [Setup K3d/K3s](https://github.com/marketplace/actions/setup-k3d-k3s)
