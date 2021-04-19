@@ -139,6 +139,23 @@ After creating clusters, run the `kubectl cluster-info` and `kubectl get nodes` 
     $ k3d cluster start <cluster_name>
     ```
 
+### Advanced commands
+- Exposing on Ingress (via Load Balancer)
+    ```bash
+    $ k3d cluster create <cluster_name> -p "8081:80@loadbalancer" --agents 2
+    ```
+- Expoing on a port from NodePort port from a specific node to a port in localhost
+    ```bash
+    $ k3d cluster create <cluster_name> -p "8082:30080@agent[0]" --agents 2
+    ```
+- Set custom API server port
+    ```bash
+    $ k3d cluster create <cluster_name> --api-port 6550 --agents 2
+    ```
+
+
+
+
 ## References
 - [k3d](https://k3d.io/)
 - [rancher/k3d](https://github.com/rancher/k3d)
@@ -147,3 +164,4 @@ After creating clusters, run the `kubectl cluster-info` and `kubectl get nodes` 
 - Github Actions:
   - [Super-Linter](https://github.com/marketplace/actions/super-linter)
   - [Setup K3d/K3s](https://github.com/marketplace/actions/setup-k3d-k3s)
+- [Exposing services](https://k3d.io/usage/guides/exposing_services/#2-via-nodeport)
