@@ -165,3 +165,4 @@ After creating clusters, run the `kubectl cluster-info` and `kubectl get nodes` 
   - [Super-Linter](https://github.com/marketplace/actions/super-linter)
   - [Setup K3d/K3s](https://github.com/marketplace/actions/setup-k3d-k3s)
 - [Exposing services](https://k3d.io/usage/guides/exposing_services/#2-via-nodeport)
+- [K8s on macOS with K3s, K3d and Rancher](https://habd.as/post/kubernetes-macos-k3s-k3d-rancher/)
